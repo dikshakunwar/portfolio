@@ -1,20 +1,84 @@
-<%-include('partials/header')%>
-<%-include('partials/navbar')%>
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
 <br>
-<p class="fs-1 fw-bold">Home</p>
-<br>
-<br>
-<div class="container d-flex w-50 align-items-center">
-  <div class="flex-shrink-0">
-    <img src="your-image.jpg" alt="Diksha Kunwar" class="rounded-circle" width="150" height="150">
-  </div>
-  <div class="flex-grow-1 ms-4">
-  <p>
-    My name is Diksha Kunwar.
-      A highly motivated B.Tech student in Computer Science, proficient in C and Java with a strong foundation in problem-solving and data structures.  
-      Eager to apply my academic knowledge to real-world projects and contribute to meaningful solutions.
-    </p>
+<p class="fs-1 fw-bold ">Home</p>
+
+<div class="container d-flex justify-content-center mt-5">
+  <div class="row align-items-center w-75 position-relative">
+    <!-- Left Side: Image -->
+    <div class="col-md-4 text-center border border-3">
+      <img src="/photo.jpeg" alt="Diksha Kunwar" class="rounded-circle img-fluid" width="200" height="200">
+    </div>
+
+    <!-- Right Side: Carousel for Text -->
+    <div class="col-md-8 ps-4 position-relative">
+      <div id="introCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p class="fs-5 mb-0">
+              My name is <strong>Diksha Kunwar</strong>.  
+              A highly motivated B.Tech student in Computer Science, proficient in C and Java with a strong foundation in problem-solving and data structures.  
+              Eager to apply my academic knowledge to real-world projects and contribute to meaningful solutions.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <p class="fs-5 mb-0">
+              I have experience in front-end and back-end development, working with <strong>HTML, CSS, JavaScript, and Node.js</strong>.  
+              I am passionate about <strong>web development, AI, and cloud computing</strong>, and always eager to learn new technologies.  
+              My goal is to build innovative applications that solve real-world problems.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <p class="fs-5 mb-0">
+              Currently, I am learning <strong>AWS Cloud Computing</strong> and working on projects involving <strong>Mapbox and Mongoose</strong>.  
+              I am always looking for new opportunities to collaborate on exciting projects.
+            </p>
+          </div>
+        </div>
+
+        <!-- Left Arrow inside text -->
+        <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#introCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <!-- Right Arrow inside text -->
+        <button class="carousel-control-next custom-next" type="button" data-bs-target="#introCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
-<%include('partials/footer')%>
+<%- include('partials/footer') %>
+
+<style>
+  /* Custom CSS to position arrows inside the text section */
+  .custom-prev, .custom-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* Adjust button size */
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    border-radius: 50%;
+    border: none;
+  }
+
+  .custom-prev {
+    left: -40px; /* Moves the left arrow inside the text area */
+  }
+
+  .custom-next {
+    right: -20px; /* Moves the right arrow inside the text area */
+  }
+
+  /* Adjusting icon sizes */
+  .carousel-control-prev-icon, 
+  .carousel-control-next-icon {
+    width: 15px;
+    height: 15px;
+  }
+</style>

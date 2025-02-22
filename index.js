@@ -1,9 +1,11 @@
 const express = require('express');
+const path=require('path');
 const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(express.static('public'))
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/home', (req, res) => {
     res.render('home');
@@ -25,4 +27,3 @@ app.get('*', (req, res) => {
 app.listen(3030, () => {
     console.log("listening on port 3030")
 })
-
